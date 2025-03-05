@@ -28,7 +28,6 @@ default_config = [
     }
 ]
 
-
 def get_data_with_retry(url: str, retries=3):
     for i in range(retries):
         try:
@@ -61,6 +60,6 @@ class HezarfenScraper:
             print(j)
             print(self.get_data(j))"""
     def search_news(self, query):
-        result = search("site:milliyet.com.tr OR site:dipnot.tv OR site:haberturk.com OR site:sabah.com.tr " + query, tld="com.tr", num=10, stop=50, pause=2, country="TR")
+        result = search("site:milliyet.com.tr OR site:dipnot.tv OR site:haberturk.com OR site:sabah.com.tr " + query, num=10, stop=100, pause=2, country="TR")
 
         return result
